@@ -1,6 +1,6 @@
 ---
-layout: about
-title: about
+layout: About
+title: About
 permalink: /
 subtitle: <a href='https://ece.princeton.edu/'>ECE Department</a> @ Princeton University
 
