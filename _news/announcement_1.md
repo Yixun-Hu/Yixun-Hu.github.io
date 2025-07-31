@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-A simple inline announcement.
+Paper [PSPC](https://ieeexplore.ieee.org/document/10638747/metrics#metrics) is accepted to OJID 2024.

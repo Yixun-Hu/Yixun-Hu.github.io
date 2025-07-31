@@ -16,18 +16,21 @@ profile:
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 
-# announcements:
-#   enabled: true # includes a list of news items
-#   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-#   limit: 5 # leave blank to include all the news in the `_news` folder
+announcements:
+  enabled: true # includes a list of news items
+  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
+  limit: 5 # leave blank to include all the news in the `_news` folder
 
-# latest_posts:
-#   enabled: true
-#   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-#   limit: 3 # leave blank to include all the blog posts
+latest_posts:
+  enabled: true
+  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
+  limit: 3 # leave blank to include all the blog posts
 ---
-Hi! I am Yixun Hu, a first-year Ph.D. student in ECE Department, Princeton University. Prior to Princeton, I obtained a bachelor's degree (B.Eng in EE) from Tsinghua University in 2025, where I worked with Prof. [Chen Jiang](https://web.ee.tsinghua.edu.cn/jiangchen/en/index.htm). I also had a great summer working with Prof. [Zhenan Bao](https://baogroup.stanford.edu/) at Stanford in 2024. 
+Hi! I am Yixun Hu, a first-year Ph.D. student in ECE Department, Princeton University. 
 
+Prior to Princeton, I obtained a bachelor's degree (B.Eng in EE) from Tsinghua University in 2025, where I worked with Prof. [Chen Jiang](https://web.ee.tsinghua.edu.cn/jiangchen/en/index.htm). I also had a great summer working with Prof. [Zhenan Bao](https://baogroup.stanford.edu/) at Stanford in 2024. 
+
+contact: yh4742 at princeton dot edu
 <!-- 
 Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
 
