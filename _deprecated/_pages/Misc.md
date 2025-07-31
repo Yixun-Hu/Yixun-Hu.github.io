@@ -1,7 +1,7 @@
 ---
 layout: default
-permalink: /Misc/
-title: Misc
+permalink: /misc/
+title: misc
 ---
 # Links
 * Friends: [Haoen Li](https://haoen2021.github.io/)
