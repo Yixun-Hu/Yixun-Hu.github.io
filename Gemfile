@@ -31,6 +31,7 @@ group :other_plugins do
     gem 'feedjira'
     gem 'ffi', '~> 1.17'
     gem 'httparty'
+    gem 'nokogiri', '~> 1.16'
     gem 'observer'       # used by jekyll-scholar
     gem 'ostruct'        # used by jekyll-twitter-plugin
     # gem 'terser'         # used by jekyll-terser
