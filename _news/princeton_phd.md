@@ -5,5 +5,5 @@ inline: true
 related_posts: false
 ---
 
-Excited to announce that I have been accepted to the ECE PhD program at [Princeton University](https://www.princeton.edu/) and am rotating at [Dhruv Shah's lab](https://robodhruv.github.io/)!
+Join [Princeton University](https://www.princeton.edu/) as a ECE Ph.D. Rotating with [Professor Dhruv Shah](https://robodhruv.github.io/).
 
