@@ -46,6 +46,9 @@ ninja.data = [{
             },},{id: "news-paper-pspc-is-accepted-to-ojid-2024",
           title: 'Paper PSPC is accepted to OJID 2024.',
           description: "",
+          section: "News",},{id: "news-paper-pspc-got-spotlighted-in-ojid-2024",
+          title: 'Paper PSPC got spotlighted in OJID 2024.',
+          description: "",
           section: "News",},{
         id: 'social-email',
         title: 'email',
