@@ -25,7 +25,7 @@ Let's prove this through simulation! Below is an interactive visualization where
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        <iframe src="{{ '/assets/html/clt-demo.html' | relative_url }}" width="100%" height="800" frameborder="0" style="border: 1px solid #ddd; border-radius: 8px;"></iframe>
+        <iframe src="/assets/html/clt-demo.html" width="100%" height="800" frameborder="0" style="border: 1px solid #ddd; border-radius: 8px;"></iframe>
     </div>
 </div>
 
