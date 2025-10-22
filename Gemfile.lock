@@ -215,6 +215,7 @@ DEPENDENCIES
   classifier-reborn
   css_parser
   feedjira
+  ffi (~> 1.17)
   httparty
   jekyll
   jekyll-archives-v2
