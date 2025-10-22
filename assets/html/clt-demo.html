@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central Limit Theorem - Coin Flip Demo</title>
+    <script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        .control-group {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 14px;
+        }
+        input[type="range"] {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #4a90e2;
+            cursor: pointer;
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #4a90e2;
+            cursor: pointer;
+            border: none;
+        }
+        .value-display {
+            display: inline-block;
+            background: #e9ecef;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #495057;
+            margin-left: 10px;
+        }
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        #plot {
+            margin-top: 25px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .stat-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .info-box {
+            background: #e7f3ff;
+            border-left: 4px solid #4a90e2;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+        .info-box h3 {
+            margin-top: 0;
+            color: #2c5aa0;
+        }
+        .loading {
+            text-align: center;
+            color: #666;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center; color: #333; margin-bottom: 10px;">🎲 Central Limit Theorem Demo</h1>
+        <p style="text-align: center; color: #666; margin-bottom: 30px;">Watch how coin flip averages converge to a normal distribution!</p>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label>
+                    Flips per Experiment: <span class="value-display" id="flipsValue">50</span>
+                </label>
+                <input type="range" id="flipsPerExperiment" min="5" max="200" value="50" step="5">
+            </div>
+            
+            <div class="control-group">
+                <label>
+                    Number of Experiments: <span class="value-display" id="experimentsValue">500</span>
+                </label>
+                <input type="range" id="numExperiments" min="100" max="2000" value="500" step="100">
+            </div>
+            
+            <div class="control-group">
+                <label>
+                    Coin Bias (P(Heads)): <span class="value-display" id="biasValue">0.50</span>
+                </label>
+                <input type="range" id="coinBias" min="0.1" max="0.9" value="0.5" step="0.05">
+            </div>
+        </div>
+        
+        <div style="text-align: center;">
+            <button id="runButton" onclick="runSimulation()">🚀 Run Simulation</button>
+        </div>
+        
+        <div id="plot"></div>
+        
+        <div class="stats" id="stats" style="display: none;">
+            <div class="stat-box">
+                <div class="stat-label">Sample Mean</div>
+                <div class="stat-value" id="sampleMean">-</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Sample Std Dev</div>
+                <div class="stat-value" id="sampleStd">-</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Theoretical Mean</div>
+                <div class="stat-value" id="theoreticalMean">-</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Theoretical Std Dev</div>
+                <div class="stat-value" id="theoreticalStd">-</div>
+            </div>
+        </div>
+        
+        <div class="info-box">
+            <h3>How to Use:</h3>
+            <ul style="margin: 10px 0; padding-left: 20px;">
+                <li><strong>Flips per Experiment:</strong> Number of coin flips in each trial</li>
+                <li><strong>Number of Experiments:</strong> How many times to repeat the experiment</li>
+                <li><strong>Coin Bias:</strong> Probability of getting heads (0.5 = fair coin)</li>
+            </ul>
+            <p style="margin-bottom: 0;"><strong>Observe:</strong> As you increase the number of flips, the distribution becomes more normal (bell-shaped), demonstrating the Central Limit Theorem!</p>
+        </div>
+    </div>
+
+    <script>
+        // Update value displays
+        document.getElementById('flipsPerExperiment').addEventListener('input', function(e) {
+            document.getElementById('flipsValue').textContent = e.target.value;
+        });
+        
+        document.getElementById('numExperiments').addEventListener('input', function(e) {
+            document.getElementById('experimentsValue').textContent = e.target.value;
+        });
+        
+        document.getElementById('coinBias').addEventListener('input', function(e) {
+            document.getElementById('biasValue').textContent = parseFloat(e.target.value).toFixed(2);
+        });
+
+        // Simulate coin flips
+        function flipCoins(numFlips, probability) {
+            let heads = 0;
+            for (let i = 0; i < numFlips; i++) {
+                if (Math.random() < probability) {
+                    heads++;
+                }
+            }
+            return heads / numFlips; // Return proportion of heads
+        }
+
+        // Normal distribution for overlay
+        function normalPDF(x, mean, stdDev) {
+            const exponent = -Math.pow(x - mean, 2) / (2 * Math.pow(stdDev, 2));
+            return Math.exp(exponent) / (stdDev * Math.sqrt(2 * Math.PI));
+        }
+
+        // Calculate statistics
+        function calculateStats(data) {
+            const n = data.length;
+            const mean = data.reduce((a, b) => a + b, 0) / n;
+            const variance = data.reduce((sum, x) => sum + Math.pow(x - mean, 2), 0) / n;
+            const stdDev = Math.sqrt(variance);
+            return { mean, stdDev };
+        }
+
+        async function runSimulation() {
+            const button = document.getElementById('runButton');
+            button.disabled = true;
+            button.textContent = '⏳ Running...';
+            
+            const flips = parseInt(document.getElementById('flipsPerExperiment').value);
+            const experiments = parseInt(document.getElementById('numExperiments').value);
+            const bias = parseFloat(document.getElementById('coinBias').value);
+            
+            // Run simulation
+            await new Promise(resolve => setTimeout(resolve, 100)); // Small delay for UI update
+            
+            const proportions = [];
+            for (let i = 0; i < experiments; i++) {
+                proportions.push(flipCoins(flips, bias));
+            }
+            
+            // Calculate statistics
+            const stats = calculateStats(proportions);
+            const theoreticalMean = bias;
+            const theoreticalStd = Math.sqrt(bias * (1 - bias) / flips);
+            
+            // Update stats display
+            document.getElementById('sampleMean').textContent = stats.mean.toFixed(4);
+            document.getElementById('sampleStd').textContent = stats.stdDev.toFixed(4);
+            document.getElementById('theoreticalMean').textContent = theoreticalMean.toFixed(4);
+            document.getElementById('theoreticalStd').textContent = theoreticalStd.toFixed(4);
+            document.getElementById('stats').style.display = 'grid';
+            
+            // Create histogram
+            const trace1 = {
+                x: proportions,
+                type: 'histogram',
+                name: 'Observed Distribution',
+                marker: {
+                    color: 'rgba(102, 126, 234, 0.7)',
+                    line: {
+                        color: 'rgba(102, 126, 234, 1)',
+                        width: 1
+                    }
+                },
+                nbinsx: 30,
+                histnorm: 'probability density'
+            };
+            
+            // Create normal distribution overlay
+            const xMin = Math.min(...proportions);
+            const xMax = Math.max(...proportions);
+            const xRange = Array.from({length: 200}, (_, i) => xMin + (xMax - xMin) * i / 199);
+            const yNormal = xRange.map(x => normalPDF(x, theoreticalMean, theoreticalStd));
+            
+            const trace2 = {
+                x: xRange,
+                y: yNormal,
+                type: 'scatter',
+                mode: 'lines',
+                name: 'Theoretical Normal',
+                line: {
+                    color: 'rgba(239, 71, 111, 1)',
+                    width: 3
+                }
+            };
+            
+            const layout = {
+                title: {
+                    text: 'Distribution of Sample Proportions (Averages)',
+                    font: { size: 18, color: '#333' }
+                },
+                xaxis: {
+                    title: 'Proportion of Heads',
+                    gridcolor: '#e9ecef'
+                },
+                yaxis: {
+                    title: 'Density',
+                    gridcolor: '#e9ecef'
+                },
+                plot_bgcolor: '#f8f9fa',
+                paper_bgcolor: 'white',
+                showlegend: true,
+                legend: {
+                    x: 0.7,
+                    y: 0.95
+                },
+                margin: { t: 60, b: 60, l: 60, r: 40 }
+            };
+            
+            const config = {
+                responsive: true,
+                displayModeBar: true,
+                displaylogo: false
+            };
+            
+            Plotly.newPlot('plot', [trace1, trace2], layout, config);
+            
+            button.disabled = false;
+            button.textContent = '🚀 Run Simulation';
+        }
+        
+        // Run simulation on page load
+        window.addEventListener('load', function() {
+            setTimeout(runSimulation, 500);
+        });
+    </script>
+</body>
+</html>
+
