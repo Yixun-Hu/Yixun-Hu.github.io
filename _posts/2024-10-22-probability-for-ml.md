@@ -25,7 +25,7 @@ Let's prove this through simulation! Below is an interactive visualization where
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/html/clt-demo.html" class="img-fluid rounded z-depth-1" %}
+        <iframe src="{{ '/assets/html/clt-demo.html' | relative_url }}" width="100%" height="800" frameborder="0" style="border: 1px solid #ddd; border-radius: 8px;"></iframe>
     </div>
 </div>
 
