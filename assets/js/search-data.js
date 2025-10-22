@@ -40,8 +40,8 @@ ninja.data = [{
           section: "News",},{id: "news-paper-pspc-got-spotlighted-in-ojid-2024",
           title: 'Paper PSPC got spotlighted in OJID 2024.',
           description: "",
-          section: "News",},{id: "news-excited-to-announce-that-i-have-been-accepted-to-the-ece-phd-program-at-princeton-university-and-am-rotating-at-dhruv-shah-s-lab",
-          title: 'Excited to announce that I have been accepted to the ECE PhD program...',
+          section: "News",},{id: "news-join-princeton-university-as-a-ece-ph-d-rotating-with-professor-dhruv-shah",
+          title: 'Join Princeton University as a ECE Ph.D. Rotating with Professor Dhruv Shah.',
           description: "",
           section: "News",},{
       id: 'light-theme',
