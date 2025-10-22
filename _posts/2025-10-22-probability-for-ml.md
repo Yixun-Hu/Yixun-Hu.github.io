@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Learning Probability for Machine Learning
-date: 2024-10-22 10:00:00
+date: 2025-10-22 10:00:00
 description: An interactive exploration of fundamental probability concepts and the Central Limit Theorem
 tags: probability machine-learning statistics
 categories: tutorial
