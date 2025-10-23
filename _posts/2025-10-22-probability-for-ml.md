@@ -83,3 +83,8 @@ The more coin flips per experiment and the more experiments you run, the more cl
 
 Try adjusting the parameters in the visualization to build your intuition about how the CLT works!
 
+## More Resources to learn
+1. [Diffusion Models from MIT courses]()
+2. [Optimization theory]()
+3. [Probability theory for machine learning]()
+4. 
