@@ -23,7 +23,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-learning-probability-for-machine-learning",
+        },{id: "post-hill-climbing-search-for-predicate-discovery",
+        
+          title: "Hill Climbing Search for Predicate Discovery",
+        
+        description: "An interactive visualization of the hill climbing algorithm used in grammar search invention for task planning",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/hill-climbing-search/";
+          
+        },
+      },{id: "post-learning-probability-for-machine-learning",
         
           title: "Learning Probability for Machine Learning",
         
