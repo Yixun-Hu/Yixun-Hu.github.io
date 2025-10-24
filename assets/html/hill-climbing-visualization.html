@@ -437,6 +437,7 @@
                 <div class="equation-box">
                     <div class="equation-title">Surrogate Objective Function</div>
                     <div class="math-content">
+                        To avoid noise due to CPU speed, we instead use the cumulative number of nodes created by the \(A^*\)-search algorithm:
                         \[
                         J_{\text{surr}}(\mathcal{P}) = \mathbb{E}_{\text{demo}} \left[ \text{# nodes before finding refinable skeleton} \right]
                         \]
@@ -450,11 +451,28 @@
                         </ul>
                     </div>
                 </div>
+                <div class="equation-box">
+                    <div class="equation-title">Surrogate Objective Calculation</div>
+                    <div class="math-content">
+                        The same objective can be expressed as:
+                        \[
+                        J_{\text{surr}} = \sum_{\text{demos}} \left[ \sum_{\text{skeletons}} p_i \cdot n_i + \text{backtracking penalty} + p_{\text{fail}} \cdot \text{upper bound} \right]
+                        \]
+                    </div>
+                    <div class="variable-explanation">
+                        <strong>Where:</strong>
+                        <ul>
+                            <li>\(p_i\) = probability skeleton \(i\) is refinable</li>
+                            <li>\(n_i\) = nodes created/expanded for skeleton \(i\)</li>
+                            <li>\(p_{\text{fail}}\) = probability no skeleton is refinable</li>
+                        </ul>
+                    </div>
+                </div>
 
                 <div class="equation-box">
                     <div class="equation-title">Expected Nodes Calculation (from code)</div>
                     <div class="math-content">
-                        For each demonstration \(d\), for each skeleton \(k\) found by task planning:
+                        Further, the objective can be expressed as this. For each demonstration \(d\), for each skeleton \(k\) found by task planning:
                         \[
                         J_{\text{surr}} = \sum_{d} \sum_{k} P(\text{first refinable is } k) \cdot \left( n_k + w \cdot \mathbb{1}_{k>0} \right) + P_{\text{fail}} \cdot U
                         \]
