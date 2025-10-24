@@ -1019,9 +1019,10 @@ Demo length: \(\ell_{\text{demo}} = 3\) (example)<br>
   \(n_0\) = 50,000 nodes created (planner explores many options)<br>
   \(\ell_0\) = 10 (skeleton length, far from demo)<br>
   exponent = |3 - 10| = 7<br>
-  \(p_{\text{refine}}(0) = 0.99999 \times (1-0.99999)^7 \approx 0.99992\)<br>
+  \(p_{\text{refine}}(0) = 0.99999 \times (1-0.99999)^7 \approx 10^{-35}\) (very low!)<br>
   <br>
-  Contribution: \(0.99992 \times 50000 = 49,996\)<br>
+  Contribution: \(10^{-35} \times 50000 \approx 0\) (negligible!). <br>
+  But \(P_{fail} \approx 1 \), leading to a situation where upper bound dominates (100,000 * 1 = 100,000).
 <br>
 <strong>Multiple skeletons explored...</strong><br>
   Each adds more nodes + backtracking cost<br>
