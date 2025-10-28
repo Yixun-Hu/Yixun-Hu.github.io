@@ -12,6 +12,7 @@ class ViewCounter {
         // Extract post slug from URL
         const path = window.location.pathname;
         const match = path.match(/\/blog\/(\d{4}-\d{2}-\d{2}-[^\/]+)/);
+        console.log('Current path:', path, 'Match:', match);
         return match ? match[1] : null;
     }
 
