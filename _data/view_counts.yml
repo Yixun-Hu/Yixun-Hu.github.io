@@ -1,0 +1,7 @@
+# Blog Post View Counts
+# This file stores view counts for blog posts
+# Format: post_slug: view_count
+
+# Example entries (will be populated by JavaScript)
+# 2025-10-22-probability-for-ml: 0
+# 2025-10-23-hill-climbing-search: 0

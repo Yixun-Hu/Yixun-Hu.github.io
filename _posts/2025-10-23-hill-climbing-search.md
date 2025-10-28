@@ -89,5 +89,5 @@ Use keyboard shortcuts:
 
 ## References
 
-- [Predicate Invention for Bilevel Planning](https://arxiv.org/abs/2203.09634). Silver*, Chitnis*, Kumar, McClinton, Lozano-Perez, Kaelbling, Tenenbaum. AAAI 2023.
+- [Predicate Invention for Bilevel Planning](https://arxiv.org/abs/2203.09634). Silver\*, Chitnis\*, Kumar, McClinton, Lozano-Perez, Kaelbling, Tenenbaum. AAAI 2023.
 

@@ -21,6 +21,7 @@ layout: default
       {% if page.author %}by {{ page.author }}{% endif %}
       {% if page.last_updated %}, last updated on {{ page.last_updated | date: '%B %d, %Y' }}{% endif %}
       {% if page.meta %}• {{ page.meta }}{% endif %}
+      {% if url_beginning == '/blog/' %}• <span id="view-counter" class="view-counter">0 views</span>{% endif %}
     </p>
     <p class="post-tags">
       {% if url_beginning == '/blog/' %}
@@ -94,3 +95,7 @@ layout: default
     {% include giscus.liquid %}
   {% endif %}
 </div>
+
+{% if url_beginning == '/blog/' %}
+<script src="{{ '/assets/js/view-counter.js' | relative_url }}"></script>
+{% endif %}

@@ -23,3 +23,20 @@ $max-content-width: {{ site.max_width }};
   "tabler-icons/tabler-icons-filled.scss",
   "tabler-icons/tabler-icons-outline.scss"
 ;
+
+// View Counter Styles
+.view-counter {
+  color: #666;
+  font-size: 0.9em;
+  font-weight: 500;
+  
+  &::before {
+    content: "👁️ ";
+    margin-right: 2px;
+  }
+}
+
+.post-meta .view-counter {
+  color: #888;
+  font-size: 0.85em;
+}

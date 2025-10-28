@@ -84,6 +84,7 @@ pagination:
   {{ read_time }} min read &nbsp; &middot; &nbsp;
   <a href="{{ year | prepend: '/blog/' | relative_url }}">
     <i class="fa-solid fa-calendar fa-sm"></i> {{ year }} </a>
+  &nbsp; &middot; &nbsp; <span id="view-counter-{{ post.slug }}" class="view-counter">0 views</span>
 </p>
 </div>
 </div>
@@ -140,6 +141,7 @@ pagination:
         {% if post.external_source %}
         &nbsp; &middot; &nbsp; {{ post.external_source }}
         {% endif %}
+        &nbsp; &middot; &nbsp; <span id="view-counter-{{ post.slug }}" class="view-counter">0 views</span>
       </p>
       <p class="post-tags">
         <a href="{{ year | prepend: '/blog/' | relative_url }}">
@@ -185,4 +187,20 @@ pagination:
 {% endif %}
 
 </div>
+
+<script src="{{ '/assets/js/view-counter.js' | relative_url }}"></script>
+<script>
+// Load view counts for all posts on blog page
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.viewCounter) {
+        // Get all post slugs from the page
+        const postElements = document.querySelectorAll('[id^="view-counter-"]');
+        postElements.forEach(function(element) {
+            const postSlug = element.id.replace('view-counter-', '');
+            const viewCount = window.viewCounter.getViewCount(postSlug);
+            element.textContent = `${viewCount} view${viewCount !== 1 ? 's' : ''}`;
+        });
+    }
+});
+</script>
 
