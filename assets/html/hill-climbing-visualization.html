@@ -1227,23 +1227,23 @@ Given: All 5 predicates selected<br>
                 <ul style="list-style: none;">
                     <li style="padding: 10px; margin: 5px 0; background: rgba(255,255,255,0.2); border-radius: 6px;">
                         <strong>① NOT-Forall[0:block].[[[0:block].grasp&lt;=[idx_0]-0.487][0]]</strong>
-                        <br><small style="opacity: 0.8;">Not all blocks satisfy grasp condition (robot can pick more)</small>
+                        <br><small style="opacity: 0.8;">Not all blocks is grasped (robot pick up at least one block)</small>
                     </li>
                     <li style="padding: 10px; margin: 5px 0; background: rgba(255,255,255,0.2); border-radius: 6px;">
                         <strong>② Forall[0:block].[[[0:block].grasp&lt;=[idx_0]-0.487][0]]</strong>
-                        <br><small style="opacity: 0.8;">All blocks satisfy grasp condition (complementary state)</small>
+                        <br><small style="opacity: 0.8;">All blocks satisfy grasp condition (robot's hand is emmpty)</small>
                     </li>
                     <li style="padding: 10px; margin: 5px 0; background: rgba(255,255,255,0.2); border-radius: 6px;">
                         <strong>③ NOT-[[0:block].grasp&lt;=[idx_0]-0.487]</strong>
-                        <br><small style="opacity: 0.8;">Specific block does not satisfy grasp (block-level reasoning)</small>
+                        <br><small style="opacity: 0.8;">Specific block does not satisfy grasp (robot is holding this block)</small>
                     </li>
                     <li style="padding: 10px; margin: 5px 0; background: rgba(255,255,255,0.2); border-radius: 6px;">
                         <strong>④ Forall[0:block].[NOT-Covers[0,1]]</strong>
-                        <br><small style="opacity: 0.8;">For all blocks: they don't cover the target (goal-related)</small>
+                        <br><small style="opacity: 0.8;">For all blocks: they don't cover the target (help to choose which kind of block to pick up)</small>
                     </li>
                     <li style="padding: 10px; margin: 5px 0; background: rgba(255,255,255,0.2); border-radius: 6px;">
                         <strong>⑤ Forall[1:target].[NOT-Covers[0,1]]</strong>
-                        <br><small style="opacity: 0.8;">For all targets: blocks don't cover them (inverse relation)</small>
+                        <br><small style="opacity: 0.8;">For all targets: blocks don't cover them (inverse to the terminate state)</small>
                     </li>
                 </ul>
                 <p style="margin-top: 20px; font-size: 1.1em;">
