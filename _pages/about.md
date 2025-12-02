@@ -26,7 +26,7 @@ latest_posts:
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
-Hi! I am Yixun Hu, a first-year Ph.D. student in ECE Department, Princeton University. 
+Hi! I am Yixun Hu, a first-year Ph.D. student in ECE Department, Princeton University. I define myself as a full-stack engineer: from hardware design to software algorithms, my goal is to leverage existing technologies to serve society.
 
 Prior to Princeton, I obtained a bachelor's degree (B.Eng in EE) from Tsinghua University in 2025, where I worked with Prof. [Chen Jiang](https://web.ee.tsinghua.edu.cn/jiangchen/en/index.htm). I also had a great summer working with Prof. [Zhenan Bao](https://baogroup.stanford.edu/) at Stanford in 2024. 
 
