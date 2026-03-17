@@ -26,8 +26,10 @@ latest_posts:
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
-Hi! I am Yixun Hu, a first-year Ph.D. student in ECE Department, Princeton University. I am a born scientist (love math and philosophy) and a trained engineer (interested in software and hardware systems). My goal is to understand the fundamental principles of nature and leverage existing technologies to serve society.
+Hi! I am Yixun Hu, a first-year Ph.D. student in ECE Department at Princeton University advised by  [Prof. Christine Allen-Blanchette](https://cablanc.github.io/). I am fortunate to work with [Prof. Dhruv Shah](https://robodhruv.github.io/) and [Prof. Tom Silver](https://tomsilver.github.io/) on robot learning and planning at Princeton.
 
-Prior to Princeton, I obtained a bachelor's degree (B.Eng in EE) from Tsinghua University in 2025, where I worked with Prof. [Chen Jiang](https://web.ee.tsinghua.edu.cn/jiangchen/en/index.htm). I also had a great summer working with Prof. [Zhenan Bao](https://baogroup.stanford.edu/) at Stanford in 2024. 
+I am a born scientist (love math and philosophy) and a trained engineer (interested in software and hardware systems). My goal is to understand the fundamental principles of nature and leverage existing technologies to serve society.
+
+Prior to Princeton, I obtained a bachelor's degree (B.Eng in EE) from Tsinghua University in 2025, where I worked with [Prof. Chen Jiang](https://web.ee.tsinghua.edu.cn/jiangchen/en/index.htm). I also had a great summer working with [Prof. Zhenan Bao](https://baogroup.stanford.edu/) at Stanford in 2024. 
 
 contact: yh4742 at princeton dot edu
