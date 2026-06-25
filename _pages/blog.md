@@ -2,8 +2,8 @@
 layout: default
 permalink: /blog/
 title: blog
-nav: true
-nav_order: 3
+# nav: true
+# nav_order: 3
 pagination:
   enabled: true
   collection: posts
@@ -208,4 +208,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
-
