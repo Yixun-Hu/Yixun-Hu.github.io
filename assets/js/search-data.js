@@ -9,21 +9,7 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-misc",
-          title: "misc",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/misc/";
-          },
-        },{id: "nav-blog",
-          title: "blog",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/blog/";
-          },
-        },{id: "post-hill-climbing-search-for-predicate-discovery",
+  },{id: "post-hill-climbing-search-for-predicate-discovery",
         
           title: "Hill Climbing Search for Predicate Discovery",
         
