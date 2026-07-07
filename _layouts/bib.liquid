@@ -26,7 +26,21 @@
         {% endif %}
       {% endif %}
       {% if entry.preview %}
-        {% if entry.preview contains '://' %}
+        {% assign preview_ext = entry.preview | split: '.' | last | downcase %}
+        {% assign preview_is_video = false %}
+        {% if preview_ext == 'mp4' or preview_ext == 'webm' or preview_ext == 'ogg' %}
+          {% assign preview_is_video = true %}
+        {% endif %}
+        {% if preview_is_video %}
+          {% if entry.preview contains '://' %}
+            {% assign preview_path = entry.preview %}
+          {% else %}
+            {% assign preview_path = entry.preview | prepend: '/assets/video/publication_preview/' | relative_url %}
+          {% endif %}
+          <video class="preview z-depth-1 rounded" autoplay muted loop playsinline preload="metadata" width="100%" aria-label="{{ entry.title | strip_html }}">
+            <source src="{{ preview_path }}" type="video/{{ preview_ext }}">
+          </video>
+        {% elsif entry.preview contains '://' %}
           <img class="preview z-depth-1 rounded" src="{{ entry.preview }}">
         {% else %}
           {% assign entry_path = entry.preview | prepend: '/assets/img/publication_preview/' %}
