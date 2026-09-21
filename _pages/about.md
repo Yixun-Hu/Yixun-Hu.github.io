@@ -14,6 +14,11 @@ profile:
   #   <p>Your City, State 12345</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
+academic_service: |
+  **Reviewer**
+
+  - IEEE Robotics and Automation Letters (RA-L)
+  - NeurIPS 2026 Workshop
 social: true # includes social icons at the bottom of the page
 
 # announcements:
