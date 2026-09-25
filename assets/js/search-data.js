@@ -31,10 +31,7 @@ ninja.data = [{
             window.location.href = "/blog/2025/probability-for-ml/";
           
         },
-      },{id: "news-paper-pspc-is-accepted-to-ojid-2024",
-          title: 'Paper PSPC is accepted to OJID 2024.',
-          description: "",
-          section: "News",},{id: "news-paper-pspc-got-spotlighted-in-ojid-2024",
+      },{id: "news-paper-pspc-got-spotlighted-in-ojid-2024",
           title: 'Paper PSPC got spotlighted in OJID 2024.',
           description: "",
           section: "News",},{id: "news-join-princeton-university-as-a-ece-ph-d",
