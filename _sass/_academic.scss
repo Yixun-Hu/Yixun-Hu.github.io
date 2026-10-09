@@ -207,20 +207,28 @@ h1.post-title {
       }
     }
 
+    .title, .abbr abbr {
+      font-family: $academic-serif;
+      font-size: 14.4px;
+      font-weight: 450;
+      line-height: 1.28;
+    }
+
     .abbr {
       margin-bottom: 0;
 
       abbr {
+        display: block;
+        width: fit-content;
+        max-width: 100%;
+        margin-right: auto;
+        margin-left: auto;
         background: #2698ba !important;
         box-shadow: none;
         border-radius: 4px;
         color: #fff !important;
         text-align: center;
-        font-family: $academic-sans;
-        font-size: 0.82rem;
-        font-weight: 700;
-        line-height: 1.25;
-        padding: 4px 8px;
+        padding: 2px 6px;
 
         a {
           color: inherit;
@@ -243,9 +251,6 @@ h1.post-title {
 
     .title {
       color: var(--global-theme-color);
-      font-size: 14.4px;
-      font-weight: 450;
-      line-height: 1.28;
     }
 
     .author, .periodical {
