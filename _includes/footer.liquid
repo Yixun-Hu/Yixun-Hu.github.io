@@ -24,7 +24,9 @@
     {% endif %}
 
     <div class="container">
-      {% include visitor_map.liquid %}
+      {% if page.url == '/' %}
+        {% include visitor_map.liquid %}
+      {% endif %}
       {{ footer_contents }}
     </div>
   </footer>

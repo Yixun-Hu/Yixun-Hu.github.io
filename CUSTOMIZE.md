@@ -80,7 +80,8 @@ All changes made to this file are only visible after you rebuild the website. Th
 
 ## Visitor map
 
-The non-fixed footer supports a MapMyVisitors image widget on every page. Create
+The non-fixed footer supports a MapMyVisitors image widget only on the About Me
+homepage (`/`). Other pages do not load the widget or send tracking requests. Create
 a widget for `https://yixun-hu.github.io/` at <https://mapmyvisitors.com/add>, then
 copy its public identifiers into `visitor_map` in `_config.yml`: `map_id` is the
 `d` query parameter of the `map.png` image URL, and `stats_id` is the value after
