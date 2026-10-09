@@ -177,7 +177,7 @@ h1.post-title {
 .publications {
   margin-top: 24px;
 
-  h2.bibliography {
+  h2.bibliography, h2.publication-category {
     text-align: left;
     color: var(--global-text-color);
     font-family: $academic-sans;
@@ -228,7 +228,7 @@ h1.post-title {
         border-radius: 4px;
         color: #fff !important;
         text-align: center;
-        padding: 2px 6px;
+        padding: 0 6px;
 
         a {
           color: inherit;
