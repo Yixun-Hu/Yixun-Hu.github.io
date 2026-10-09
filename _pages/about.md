@@ -18,7 +18,7 @@ academic_service: |
   **Reviewer**
 
   - IEEE Robotics and Automation Letters (RA-L)
-  - [IAEval (NeurIPS 2026 Workshop)](https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/IAEval)
+  - NeurIPS 2026 Workshop
 social: true # includes social icons at the bottom of the page
 
 announcements:
