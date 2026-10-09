@@ -15,7 +15,14 @@ scholar:
 <div class="publications">
   <section aria-labelledby="intelligence-physical-systems">
     <h2 class="publication-category" id="intelligence-physical-systems">Intelligence &amp; Physical Systems</h2>
-    {% bibliography --query @*[research_area=physical_systems]* %}
+    <section aria-labelledby="ai-for-science">
+      <h3 class="publication-subcategory" id="ai-for-science">AI for Science</h3>
+      {% bibliography --query @*[research_topic=ai_for_science]* %}
+    </section>
+    <section aria-labelledby="bio-inspired-computing">
+      <h3 class="publication-subcategory" id="bio-inspired-computing">Bio-inspired Computing</h3>
+      {% bibliography --query @*[research_topic=bio_inspired_computing]* %}
+    </section>
   </section>
   <section aria-labelledby="robotics-embodied-ai">
     <h2 class="publication-category" id="robotics-embodied-ai">Robotics &amp; Embodied AI</h2>
