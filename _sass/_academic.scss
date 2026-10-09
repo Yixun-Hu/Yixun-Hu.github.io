@@ -295,6 +295,22 @@ h1.post-title {
   }
 }
 
+.visitor-map {
+  width: 260px;
+  max-width: 100%;
+  margin: 0 auto 24px;
+
+  a, img {
+    display: block;
+    width: 100%;
+  }
+
+  img {
+    height: 160px;
+    object-fit: contain;
+  }
+}
+
 footer.sticky-bottom {
   padding: 40px 0;
   background: var(--global-bg-color);

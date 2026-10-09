@@ -47,6 +47,21 @@ The configuration file [\_config.yml](_config.yml) contains the main configurati
 
 All changes made to this file are only visible after you rebuild the website. That means that you need to run `bundle exec jekyll serve` again if you are running the website locally or push your changes to GitHub if you are using GitHub Pages. All other changes are visible immediately, you only need to refresh the page.
 
+## Visitor map
+
+The non-fixed footer supports a MapMyVisitors image widget on every page. Create
+a widget for `https://yixun-hu.github.io/` at <https://mapmyvisitors.com/add>, then
+copy its public identifiers into `visitor_map` in `_config.yml`: `map_id` is the
+`d` query parameter of the `map.png` image URL, and `stats_id` is the value after
+`/web/` in the statistics link. Set `enabled: true` and deploy.
+
+The widget is omitted when disabled, either identifier is missing, or Jekyll is
+not running in production mode. Development previews therefore do not send tracking
+requests. The image is intentionally not lazy-loaded, so visits are not limited
+to people who scroll to the footer. MapMyVisitors receives the visitor's IP and
+the site origin to provide aggregate geographic statistics; no browser location
+permission is requested. Counts begin after installation, not retroactively.
+
 ## Modifying the CV information
 
 There are currently 2 different ways of generating the CV page content. The first one is by using a json file located in [assets/json/resume.json](assets/json/resume.json). It is a [known standard](https://jsonresume.org/) for creating a CV programmatically. The second one, currently used as a fallback when the json file is not found, is by using a yml file located in [\_data/cv.yml](_data/cv.yml). This was the original way of creating the CV page content and since it is more human readable than a json file we decided to keep it as an option.

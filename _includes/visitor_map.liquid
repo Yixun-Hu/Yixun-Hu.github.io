@@ -1,0 +1,21 @@
+{% assign visitor_map_id = site.visitor_map.map_id | default: '' | strip %}
+{% assign visitor_stats_id = site.visitor_map.stats_id | default: '' | strip %}
+{% if jekyll.environment == 'production' and site.visitor_map.enabled == true and visitor_map_id != '' and visitor_stats_id != '' %}
+  <div class="visitor-map">
+    <a
+      href="https://mapmyvisitors.com/web/{{ visitor_stats_id | url_encode }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Worldwide visitor statistics"
+    >
+      <img
+        src="https://mapmyvisitors.com/map.png?cl=b5b5b5&amp;w=260&amp;t=m&amp;d={{ visitor_map_id | url_encode }}&amp;co=ffffff&amp;ct=000000"
+        width="260"
+        height="160"
+        alt="World map of visits to Yixun Hu's website"
+        decoding="async"
+        referrerpolicy="strict-origin"
+      >
+    </a>
+  </div>
+{% endif %}
