@@ -24,15 +24,10 @@ nav_order: 2
     </li>
     <li>
       <time datetime="2024">2024</time>
-      <div><strong>Tsinghua University Comprehensive Excellence Scholarship</strong>.</div>
-    </li>
-    <li>
-      <time datetime="2023">2023</time>
-      <div><strong>Tsinghua University Comprehensive Excellence Scholarship</strong>.</div>
-    </li>
-    <li>
-      <time datetime="2022">2022</time>
-      <div><strong>Tsinghua University Comprehensive Excellence Scholarship</strong>.</div>
+      <div>
+        <strong>Grand Prize of International Study Scholarship</strong> (<em>0.2%</em>).<br>
+        <em>Only 2 recipients out of 1,018 people.</em>
+      </div>
     </li>
   </ul>
 </section>
