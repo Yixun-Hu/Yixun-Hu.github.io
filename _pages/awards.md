@@ -22,5 +22,17 @@ nav_order: 2
         <strong>Outstanding Graduate</strong> named by Beijing and by Tsinghua (<em>1%</em>).
       </div>
     </li>
+    <li>
+      <time datetime="2024">2024</time>
+      <div><strong>Tsinghua University Comprehensive Excellence Scholarship</strong>.</div>
+    </li>
+    <li>
+      <time datetime="2023">2023</time>
+      <div><strong>Tsinghua University Comprehensive Excellence Scholarship</strong>.</div>
+    </li>
+    <li>
+      <time datetime="2022">2022</time>
+      <div><strong>Tsinghua University Comprehensive Excellence Scholarship</strong>.</div>
+    </li>
   </ul>
 </section>
