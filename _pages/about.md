@@ -37,6 +37,6 @@ Hi! I am Yixun Hu, a second-year Ph.D. student in ECE Department at Princeton Un
 I am a born scientist (love math, physics, and philosophy) and a trained engineer (interested in software and hardware systems). My goal is to understand the fundamental principles of nature and leverage existing technologies to serve society.
 {% endcomment %}
 
-Prior to Princeton, I obtained a bachelor's degree (B.Eng in EE) from Tsinghua University in 2025, where I worked with [Prof. Chen Jiang](https://web.ee.tsinghua.edu.cn/jiangchen/en/index.htm). I also had a great summer working with [Prof. Zhenan Bao](https://baogroup.stanford.edu/) at Stanford in 2024. 
+Prior to Princeton, I obtained a bachelor's degree (B.Eng in EE) from Tsinghua University in 2025{% comment %}, where I worked with [Prof. Chen Jiang](https://web.ee.tsinghua.edu.cn/jiangchen/en/index.htm){% endcomment %}. I also had a great summer working with [Prof. Zhenan Bao](https://baogroup.stanford.edu/) at Stanford in 2024.
 
 contact: yh4742 at princeton dot edu
