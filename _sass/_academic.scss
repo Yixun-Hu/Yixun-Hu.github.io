@@ -211,14 +211,16 @@ h1.post-title {
       margin-bottom: 0;
 
       abbr {
-        background: transparent !important;
+        background: #2698ba !important;
         box-shadow: none;
-        border-radius: 0;
-        color: var(--global-theme-color) !important;
-        text-align: right;
+        border-radius: 4px;
+        color: #fff !important;
+        text-align: center;
+        font-family: $academic-sans;
         font-size: 0.82rem;
+        font-weight: 700;
         line-height: 1.25;
-        padding: 0;
+        padding: 4px 8px;
 
         a {
           color: inherit;
@@ -328,10 +330,6 @@ footer.sticky-bottom {
 
   .publications ol.bibliography > li > .row > .abbr {
     max-width: 160px;
-
-    abbr {
-      text-align: left;
-    }
   }
 }
 
