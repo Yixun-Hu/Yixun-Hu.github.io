@@ -1,13 +1,13 @@
 ---
 layout: about
-title: about
+title: About Me
 permalink: /
 subtitle: <a href='https://ece.princeton.edu/'>ECE Department</a> @ Princeton University
 
 profile:
   align: right
   image: personal_img.jpg
-  image_circular: false # crops the image to make it circular
+  image_circular: true # crops the image to make it circular
   # more_info: >
   #   <p>555 your office number</p>
   #   <p>123 your address street</p>
@@ -15,10 +15,9 @@ profile:
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 academic_service: |
-  **Reviewer**
+  **Journal Reviewer:** IEEE Robotics and Automation Letters (RA-L).
 
-  - IEEE Robotics and Automation Letters (RA-L)
-  - NeurIPS 2026 Workshop
+  **Workshop Reviewer:** NeurIPS 2026 Workshop.
 social: true # includes social icons at the bottom of the page
 
 announcements:
