@@ -6,7 +6,7 @@ nav: true
 nav_order: 1
 ---
 
-{% include bib_search.liquid %}
+[Google Scholar](https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }})
 
 <div class="publications">
   {% bibliography %}

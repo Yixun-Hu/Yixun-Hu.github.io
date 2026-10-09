@@ -62,7 +62,15 @@
   <!-- Entry bib key -->
   <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
     <!-- Title -->
-    <div class="title">{{ entry.title }}</div>
+    <div class="title">
+      {% if entry.arxiv %}
+        <a href="https://arxiv.org/abs/{{ entry.arxiv }}">{{ entry.title }}</a>
+      {% elsif entry.doi %}
+        <a href="https://doi.org/{{ entry.doi }}">{{ entry.title }}</a>
+      {% else %}
+        {{ entry.title }}
+      {% endif %}
+    </div>
     <!-- Author -->
     <div class="author">
       {% assign author_array_size = entry.author_array | size %}
@@ -207,13 +215,13 @@
         </a>
       {% endif %}
       {% if entry.abstract %}
-        <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+        <a class="abstract btn btn-sm z-depth-0" role="button"><i class="fa-solid fa-angle-down" aria-hidden="true"></i>Abstract</a>
       {% endif %}
       {% if entry.doi %}
-        <a href="https://doi.org/{{ entry.doi }}" class="btn btn-sm z-depth-0" role="button">DOI</a>
+        <a href="https://doi.org/{{ entry.doi }}" class="btn btn-sm z-depth-0" role="button"><i class="fa-solid fa-file-lines" aria-hidden="true"></i>Journal</a>
       {% endif %}
       {% if entry.arxiv %}
-        <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0" role="button">arXiv</a>
+        <a href="https://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0" role="button"><i class="fa-solid fa-file-lines" aria-hidden="true"></i>Preprint</a>
       {% endif %}
       {% if entry.bibtex_show %}
         <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
@@ -227,9 +235,9 @@
       {% endif %}
       {% if entry.pdf %}
         {% if entry.pdf contains '://' %}
-          <a href="{{ entry.pdf }}" class="btn btn-sm z-depth-0" role="button">PDF</a>
+          <a href="{{ entry.pdf }}" class="btn btn-sm z-depth-0" role="button"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i>PDF</a>
         {% else %}
-          <a href="{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">PDF</a>
+          <a href="{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i>PDF</a>
         {% endif %}
       {% endif %}
       {% if entry.supp %}
@@ -248,7 +256,7 @@
         <a href="{{ entry.blog }}" class="btn btn-sm z-depth-0" role="button">Blog</a>
       {% endif %}
       {% if entry.code %}
-        <a href="{{ entry.code }}" class="btn btn-sm z-depth-0" role="button">Code</a>
+        <a href="{{ entry.code }}" class="btn btn-sm z-depth-0" role="button"><i class="fa-solid fa-code" aria-hidden="true"></i>Code</a>
       {% endif %}
       {% if entry.poster %}
         {% if entry.poster contains '://' %}
@@ -265,7 +273,7 @@
         {% endif %}
       {% endif %}
       {% if entry.website %}
-        <a href="{{ entry.website }}" class="btn btn-sm z-depth-0" role="button">Website</a>
+        <a href="{{ entry.website }}" class="btn btn-sm z-depth-0" role="button"><i class="fa-solid fa-globe" aria-hidden="true"></i>Website</a>
       {% endif %}
     </div>
     {% if site.enable_publication_badges %}
