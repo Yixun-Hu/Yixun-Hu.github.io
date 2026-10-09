@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
+        },{id: "nav-selected-awards",
+          title: "Selected Awards",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/awards/";
+          },
         },{id: "post-hill-climbing-search-for-predicate-discovery",
         
           title: "Hill Climbing Search for Predicate Discovery",
