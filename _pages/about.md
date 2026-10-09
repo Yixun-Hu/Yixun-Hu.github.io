@@ -30,7 +30,7 @@ announcements:
 #   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
 #   limit: 3 # leave blank to include all the blog posts
 ---
-Hi! I am Yixun Hu, a second-year Ph.D. student in ECE Department at Princeton University. I am fortunate to work with [Prof. Dhruv Shah](https://robodhruv.github.io/) and [Prof. Tom Silver](https://tomsilver.github.io/) on robot learning and planning at Princeton.
+Hi! I am Yixun Hu, a second-year Ph.D. student in ECE Department at Princeton University. I am fortunate to work with [Prof. Dhruv Shah](https://robodhruv.github.io/), [Prof. Tom Silver](https://tomsilver.github.io/), and [Prof. Antonio Loquercio](https://antonilo.github.io/) on robot learning and planning.
 
 {% comment %}
 I am a born scientist (love math, physics, and philosophy) and a trained engineer (interested in software and hardware systems). My goal is to understand the fundamental principles of nature and leverage existing technologies to serve society.
