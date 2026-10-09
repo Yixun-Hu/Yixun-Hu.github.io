@@ -1,5 +1,9 @@
 ---
 ---
+{% assign publication_url = entry.url %}
+{% if publication_url == blank and entry.doi %}
+  {% assign publication_url = entry.doi | prepend: 'https://doi.org/' %}
+{% endif %}
 <div class="row">
   {% if site.enable_publication_thumbnails %}
     <div class="col col-sm-2 abbr">
@@ -65,8 +69,8 @@
     <div class="title">
       {% if entry.arxiv %}
         <a href="https://arxiv.org/abs/{{ entry.arxiv }}">{{ entry.title }}</a>
-      {% elsif entry.doi %}
-        <a href="https://doi.org/{{ entry.doi }}">{{ entry.title }}</a>
+      {% elsif publication_url != blank %}
+        <a href="{{ publication_url }}">{{ entry.title }}</a>
       {% else %}
         {{ entry.title }}
       {% endif %}
@@ -218,7 +222,7 @@
         <a class="abstract btn btn-sm z-depth-0" role="button"><i class="fa-solid fa-angle-down" aria-hidden="true"></i>Abstract</a>
       {% endif %}
       {% if entry.doi %}
-        <a href="https://doi.org/{{ entry.doi }}" class="btn btn-sm z-depth-0" role="button"><i class="fa-solid fa-file-lines" aria-hidden="true"></i>Journal</a>
+        <a href="{{ publication_url }}" class="btn btn-sm z-depth-0" role="button"><i class="fa-solid fa-file-lines" aria-hidden="true"></i>Journal</a>
       {% endif %}
       {% if entry.arxiv %}
         <a href="https://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0" role="button"><i class="fa-solid fa-file-lines" aria-hidden="true"></i>Preprint</a>
