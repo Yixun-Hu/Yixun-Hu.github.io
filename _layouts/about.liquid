@@ -11,6 +11,9 @@ layout: default
         {{ site.title }}
       {% endif %}
     </h1>
+    {% if page.motto %}
+      <p class="about-motto"><span>{{ page.motto | escape }}</span></p>
+    {% endif %}
   </header>
 
   <article>

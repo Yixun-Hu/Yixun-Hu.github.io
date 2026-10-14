@@ -3,6 +3,7 @@ layout: about
 title: About Me
 permalink: /
 subtitle: <a href='https://ece.princeton.edu/'>ECE Department</a> @ Princeton University
+motto: Stay Hungry, Stay Foolish
 
 profile:
   align: right
