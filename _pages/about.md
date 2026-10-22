@@ -18,7 +18,7 @@ selected_papers: false # papers are displayed on the Publications page
 academic_service: |
   **Journal reviewer:** IEEE Robotics and Automation Letters (RA-L)
 
-  **Conference reviewer:** NeurIPS 2026, ICRA 2027
+  **Conference reviewer:** NeurIPS 2026, ICRA 2027, CoRL 2026
 social: true # includes social icons at the bottom of the page
 
 announcements:
