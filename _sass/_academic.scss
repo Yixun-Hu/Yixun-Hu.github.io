@@ -321,6 +321,12 @@ h1.post-title {
   }
 }
 
+img.preview.medium-zoom-image--opened {
+  object-fit: contain;
+  background-color: #fff;
+  z-index: 1050;
+}
+
 .visitor-map {
   width: 260px;
   max-width: 100%;
