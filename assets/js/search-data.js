@@ -51,8 +51,8 @@ ninja.data = [{
           section: "News",},{id: "news-join-princeton-university-as-a-ece-ph-d",
           title: 'Join Princeton University as a ECE Ph.D.',
           description: "",
-          section: "News",},{id: "news-our-paper-nefty-has-been-accepted-to-neurips-2027",
-          title: 'Our paper NeFTY has been accepted to NeurIPS 2027!',
+          section: "News",},{id: "news-our-paper-nefty-has-been-accepted-to-neurips-2026",
+          title: 'Our paper NeFTY has been accepted to NeurIPS 2026!',
           description: "",
           section: "News",},{
       id: 'light-theme',
